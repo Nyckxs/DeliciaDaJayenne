@@ -1,16 +1,55 @@
-# React + Vite
+# 🍰 Delícias da Jayenne - Confeitaria Artesanal
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+![Status do Projeto](https://img.shields.io/badge/Status-Em%20Desenvolvimento-yellow)
+![Nível](https://img.shields.io/badge/Nível-Estágio%20/%20Júnior-blue)
 
-Currently, two official plugins are available:
+Este é um projeto colaborativo desenvolvido para uma confeitaria artesanal, com o objetivo de proporcionar uma experiência de compra intuitiva e elegante. O projeto simula um ambiente real de desenvolvimento, com separação de funções entre **Frontend**, **Backend** e **UI/UX**.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+---
 
-## React Compiler
+## 👥 A Equipe e Divisão de Funções
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+O projeto foi estruturado para refletir o fluxo de trabalho de uma empresa de tecnologia:
 
-## Expanding the ESLint configuration
+* **Frontend:** [Nicholas Costa] - Responsável pela transposição do design para código funcional utilizando React.
+* **Backend:** [Nycolas Rodrigues] - Responsável pela arquitetura do banco de dados e API.
+* **UI/UX:** [Gabriel Vieria] - Responsável pelo protótipo de alta fidelidade e experiência do usuário.
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+---
+
+## 🛠️ Tecnologias Utilizadas
+
+### No Ecossistema do Projeto:
+* **Design:** Figma
+* **Backend:** Node.js, SQL, Prisma
+
+### No meu escopo (Frontend):
+* **Framework:** React.js
+* **Estilização:** CSS3 (Módulos e Flexbox/Grid)
+* **Versionamento:** Git & GitHub
+
+---
+
+## 📂 Status de Desenvolvimento (Roadmap)
+
+Como o projeto está em produção, abaixo descrevo o que já foi entregue e os próximos passos:
+
+### ✅ Concluído:
+* **Arquitetura Base:** Configuração do ambiente React e estrutura de pastas.
+* **UI/UX:** Protótipo completo das telas principais.
+* **Backend:** Estrutura de dados para usuários e produtos finalizada.
+* **Interface de Login (`login.jsx` & `login.css`):** Implementação fiel ao design, com foco em responsividade e validação visual de campos.
+
+### 🚧 Em Produção:
+* **Página Home:** Desenvolvimento dos componentes de catálogo de produtos e banners promocionais.
+* **Integração de Autenticação:** Conexão do componente de login com a API do Backend via Prisma.
+
+---
+
+## 💻 Visualização do Código (Destaque)
+
+Na pasta `src/pages/login`, você encontrará meu trabalho atual:
+- **`login.jsx`**: Estrutura semântica utilizando hooks do React para controle de estado.
+- **`login.css`**: Estilização modularizada para evitar conflitos de escopo e garantir a manutenibilidade do código.
+
+---
