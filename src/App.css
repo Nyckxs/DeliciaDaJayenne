@@ -9,11 +9,3 @@
 
 }
 
-.App {
-    display: flex;
-    justify-content: flex-start;
-    min-height: 100vh;
-    background-size: cover;
-    background-position: center;
-    background-image: url(assets/Backgroundlogin.svg);
-}

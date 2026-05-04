@@ -2,7 +2,7 @@ import { useState } from "react";
 
 import "./Login.css";
 
-import Delicias from '../../assets/dj.svg';
+import Delicias from "../../../assets/dj.svg";
 
 
 const Login = () => {

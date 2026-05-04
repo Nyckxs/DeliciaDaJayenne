@@ -7,13 +7,16 @@
   font-family: 'Poppins', sans-serif;
 }
 
-
 .page-wrapper {
   display: flex;
   flex-direction: row;
-  height: 100vh;
   width: 100vw;
   overflow: hidden;
+  justify-content: flex-start;
+  min-height: 100vh;
+  background-size: cover;
+  background-position: center;
+  background-image: url('../../assets/Backgroundlogin.svg');
 }
 
 
