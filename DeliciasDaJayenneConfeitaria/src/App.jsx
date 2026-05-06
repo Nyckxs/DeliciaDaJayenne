@@ -1,22 +1,19 @@
 import './App.css';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Login from './components/Login/Login';
-import Home from './components/home/home';
 import Register from './components/SingUp/register';
+import Header from './components/Header/Header';
 
 function App() {
   return (
     <Router>
-      <div className="App">
-        <Routes>
-          <Route path="/" element={<Login />} />
-
-          <Route path="/register" element={<Register />} />
-        </Routes>
-      </div>
+      <Header />
+      <Routes>
+        <Route path="/login" element={<Login />} />
+        <Route path="/register" element={<Register />} />
+      </Routes>
     </Router>
   );
 }
 
 export default App;
-
