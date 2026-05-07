@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # 🍰 Delícias da Jayenne - Confeitaria Artesanal
 
 ![Status do Projeto](https://img.shields.io/badge/Status-Em%20Desenvolvimento-yellow)
@@ -53,3 +54,6 @@ Na pasta `src/pages/login`, você encontrará meu trabalho atual:
 - **`login.css`**: Estilização modularizada para evitar conflitos de escopo e garantir a manutenibilidade do código.
 
 ---
+=======
+
+>>>>>>> f7ede7d6b6d8a9de61a5ba69eacb66770b809219
