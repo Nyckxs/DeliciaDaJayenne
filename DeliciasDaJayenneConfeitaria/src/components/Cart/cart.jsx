@@ -1,8 +1,6 @@
 import { useState } from "react";
  
 const initialItems = [
-  { id: 1, name: "Tênis Air Max", price: 349.9, quantity: 1, image: "https://via.placeholder.com/64x64/e2e8f0/64748b?text=👟" },
-  { id: 2, name: "Camiseta Oversize", price: 89.9, quantity: 2, image: "https://via.placeholder.com/64x64/e2e8f0/64748b?text=👕" },
 ];
  
 export default function Cart() {
@@ -34,7 +32,7 @@ export default function Cart() {
           position: "relative",
           display: "flex",
           alignItems: "center",
-          gap: "6px",
+          gap: "2px",
           background: "none",
           border: "none",
           cursor: "pointer",

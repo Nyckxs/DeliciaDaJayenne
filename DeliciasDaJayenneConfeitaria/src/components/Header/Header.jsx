@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import "./Header.css";
 import djLogo from "../../assets/dj.svg";
+import Cart from "../Cart/cart";
 
 const NAV_LINKS = [
   { label: "Home", href: "/" },
@@ -9,6 +10,7 @@ const NAV_LINKS = [
   { label: "Kit festa", href: "/kit-festa" },
   { label: "Delivery", href: "/delivery" },
   { label: "Contato", href: "/contato" },
+  { label: "Quem somos", href: "/quem-somos" },
 ];
 
 const SearchIcon = () => (
@@ -80,6 +82,9 @@ const Header = () => {
             Entrar
           </button>
         </div>
+
+        {/* {carrinho} */}
+        <Cart />
 
         {/* Hamburger (mobile) */}
         <button

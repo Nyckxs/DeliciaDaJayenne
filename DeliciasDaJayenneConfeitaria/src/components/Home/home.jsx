@@ -241,7 +241,7 @@ export default function Home() {
               ))}
             </div>
 
-            <button className="btn-pedido">Conheça nossa história →</button>
+            <button className="btn-pedido"><a link to = "./who.jsx">Conheça nossa história →</a></button>
           </div>
         </div>
       </section>
