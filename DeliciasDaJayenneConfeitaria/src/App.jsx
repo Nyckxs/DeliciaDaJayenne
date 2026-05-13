@@ -7,7 +7,6 @@ import Login     from './components/Login/Login';
 import Register  from './components/SingUp/register';
 import QuemSomos from './components/QuemSomos/who';
 import Contato   from './components/contact/contact';
-import Cart      from './components/Cart/cart';
 import Checkout  from './components/Checkout/Checkout';
 
 function App() {
@@ -30,14 +29,11 @@ function App() {
       <Header cartItems={cartItems} setCartItems={setCartItems} />
       <Routes>
         <Route path="/"           element={<Home onAddToCart={addToCart} />} />
-        <Route path="/login"      element={<Login />}    />
+        <Route path="/login"      element={<Login />} />
         <Route path="/register"   element={<Register />} />
         <Route path="/quem-somos" element={<QuemSomos />} />
         <Route path="/contato"    element={<Contato />} />
-        <Route
-          path="/checkout"
-          element={<Checkout cartItems={cartItems} setCartItems={setCartItems} />}
-        />
+        <Route path="/checkout"   element={<Checkout cartItems={cartItems} setCartItems={setCartItems} />} />
       </Routes>
     </Router>
   );
