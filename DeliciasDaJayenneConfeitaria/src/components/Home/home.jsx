@@ -1,56 +1,36 @@
 import { useState, useEffect, useRef } from "react";
 import "./home.css";
+import Amostra from "../../assets/Amostra.svg";
+import Amostra2 from "../../assets/Amostra2.png";
+import Brownie from "../../assets/Brownie.png";
+import BoloMorango from "../../assets/BoloDeMorango.jpeg";
+import BoloChocolate from "../../assets/BoloDeChocolate.jpeg";
+import BoloConfeitado from "../../assets/BoloConfeitado.jpg";
+
 
 const HERO_SLIDES = [
   {
     id: 1,
-    bg: "linear-gradient(135deg, #3b1a08 0%, #7c3a12 50%, #5c2a0e 100%)",
-    badge: "🎂 Especial do Mês",
+    bg: `url(${Amostra}) no-repeat center/cover`,
     title: "Bolo de Chocolate\nArtesanal",
     subtitle: "Feito com cacau selecionado e muito amor",
     cta: "Peça o seu",
-    emoji: "🍫",
     accent: "#d4813a",
   },
   {
     id: 2,
-    bg: "linear-gradient(135deg, #1a0a2e 0%, #4a1a6e 50%, #2e0e50 100%)",
-    badge: "🍰 Kit Festa",
-    title: "Kits Completos\npara sua Festa",
-    subtitle: "Doces, bolos e muito mais para o seu evento",
-    cta: "Ver kits",
-    emoji: "🎉",
+    bg: `url(${Amostra2}) no-repeat center/cover`,
+    title: "Brownies para melhorar seu dia!",
+    subtitle: "Feito com cacau selecionado e muito amor",
+    cta: "Peça o seu",
     accent: "#b47ed4",
-  },
-  {
-    id: 3,
-    bg: "linear-gradient(135deg, #0a2e1a 0%, #1a6e3a 50%, #0e4a28 100%)",
-    badge: "🚚 Delivery",
-    title: "Entrega Fresquinha\nna Sua Porta",
-    subtitle: "Pedidos até 12h entregues no mesmo dia",
-    cta: "Fazer pedido",
-    emoji: "🛵",
-    accent: "#4ed4a0",
-  },
-  {
-    id: 4,
-    bg: "linear-gradient(135deg, #2e1a0a 0%, #8a4a1a 50%, #5c3010 100%)",
-    badge: "✨ Novidade",
-    title: "Mil Folhas\nTradicional",
-    subtitle: "Crocante por fora, cremoso por dentro",
-    cta: "Experimentar",
-    emoji: "🥐",
-    accent: "#e8c47a",
   },
 ];
 
 const PRODUCTS = [
-  { id: 1, name: "Bolo de Chocolate",    price: 89.90,  badge: "Mais Vendido", emoji: "🍫", category: "Bolos"  },
-  { id: 2, name: "Kit Festa Completo",   price: 249.90, badge: "Promoção",     emoji: "🎂", category: "Kits"   },
-  { id: 3, name: "Mil Folhas",           price: 39.90,  badge: "Novidade",     emoji: "🥐", category: "Tortas" },
-  { id: 4, name: "Trufa Sortida (12un)", price: 49.90,  badge: null,           emoji: "🍬", category: "Doces"  },
-  { id: 5, name: "Cesta Café da Manhã",  price: 129.90, badge: "Top",          emoji: "☕", category: "Cestas" },
-  { id: 6, name: "Bolo Red Velvet",      price: 99.90,  badge: null,           emoji: "❤️", category: "Bolos"  },
+  { id: 1, name: "Bolo de Chocolate",    price: 79.90,  badge: "Mais Vendido",  category: "Bolos",    image: BoloChocolate },
+  { id: 2, name: "Bolo de Morango",      price: 59.90, badge: "Promoção",     category: "Bolos",    image: BoloMorango },
+  { id: 3, name: "Brownie de Cacau",     price: 19.90,  badge: "Novidade",     category: "Brownies", image: Brownie },
 ];
 
 const DELIVERY_FEATURES = [
@@ -67,7 +47,7 @@ const ABOUT_FEATURES = [
   { icon: "❤️", title: "Feito com Amor",       text: "Em cada detalhe"          },
 ];
 
-const CATEGORIES = ["Todos", "Bolos", "Kits", "Tortas", "Doces", "Cestas"];
+const CATEGORIES = ["Todos", "Bolos", "Brownies"];
 
 export default function Home({ onAddToCart }) {
   const [currentSlide, setCurrentSlide]     = useState(0);
@@ -181,7 +161,7 @@ export default function Home({ onAddToCart }) {
             <div key={p.id} className="product-card">
               <div className="product-img-area">
                 {p.badge && <span className="product-badge">{p.badge}</span>}
-                <span className="product-emoji">{p.emoji}</span>
+                <img src={p.image} alt={p.name} />
               </div>
               <div className="product-info">
                 <div className="product-cat">{p.category}</div>
@@ -208,10 +188,11 @@ export default function Home({ onAddToCart }) {
       <section className="section section-light">
         <div className="about-grid">
           <div className="about-img-container">
-            <div className="about-emoji-placeholder">🎂</div>
+            <div className="about-emoji-placeholder">
+              <img src={BoloConfeitado} alt="Bolo Confeitado" />
+            </div>
             <div className="about-img-overlay">
-              <div className="about-overlay-num">5+</div>
-              <div className="about-overlay-text">Anos de Sabor</div>
+        
             </div>
           </div>
 
@@ -242,7 +223,9 @@ export default function Home({ onAddToCart }) {
               ))}
             </div>
 
-            <button className="btn-pedido"><a link to="./who.jsx">Conheça nossa história →</a></button>
+            <button className="btn-pedido">
+              <a href="/contato"  className="qs-btn-primar">Entrar em contato</a>
+              </button>
           </div>
         </div>
       </section>
@@ -275,7 +258,11 @@ export default function Home({ onAddToCart }) {
             Pedidos feitos até 12h entregues no mesmo dia.<br />
             Após este horário, prazo de até 1 dia útil.
           </p>
-          <button className="btn-whatsapp">💬 (85) 99999-9999</button>
+          <button className="btn-whatsapp">
+            <a href="https://wa.me/5585999999999" target="_blank" rel="noreferrer"  >
+               (85) 99999-9999
+            </a>
+          </button>
           <button className="btn-outline-white">Ver área de entrega</button>
         </div>
       </section>

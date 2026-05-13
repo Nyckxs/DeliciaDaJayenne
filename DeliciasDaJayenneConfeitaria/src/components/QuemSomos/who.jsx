@@ -1,4 +1,6 @@
 import "./who.css";
+import Jayenne from "../../assets/Jayenne.jpeg";
+
 
 const VALORES = [
   { icon: "✨", titulo: "Qualidade",    texto: "Ingredientes selecionados e processos artesanais em cada receita." },
@@ -11,7 +13,7 @@ const TIMELINE = [
   { ano: "2019", titulo: "O início",        texto: "Jayenne começa a fazer doces para amigos e família na própria cozinha." },
   { ano: "2020", titulo: "Primeiros pedidos", texto: "As encomendas crescem e o negócio começa a tomar forma nas redes sociais." },
   { ano: "2022", titulo: "Expansão",        texto: "Nova estrutura, equipe formada e lançamento do delivery próprio." },
-  { ano: "2024", titulo: "Hoje",            texto: "Mais de 5 anos adoçando vidas com mais de 500 clientes satisfeitos." },
+  { ano: "2026", titulo: "Hoje",            texto: "Mais de 5 anos adoçando vidas com mais de 500 clientes satisfeitos." },
 ];
 
 export default function QuemSomos() {
@@ -39,10 +41,9 @@ export default function QuemSomos() {
       <section className="qs-section qs-warm">
         <div className="qs-about-grid">
           <div className="qs-img-box">
-            <span className="qs-big-emoji">👩‍🍳</span>
+            <img src={Jayenne} alt="Jayenne" className="qs-big-emoji" />
             <div className="qs-badge-box">
-              <span className="qs-badge-num">5+</span>
-              <span className="qs-badge-text">Anos de sabor</span>
+              
             </div>
           </div>
 
