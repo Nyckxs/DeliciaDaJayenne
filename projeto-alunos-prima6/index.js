@@ -3,6 +3,9 @@ const express = require('express');
 // Importa o cliente do Prisma para conectar com o banco de dados
 const { PrismaClient } = require('@prisma/client');
 
+const cors = require('cors');
+app.use(cors({ origin: 'http://localhost:5173' }));
+
 // Cria uma instância do Express (nosso servidor)
 const app = express();
 // Cria uma instância do Prisma (nosso banco de dados)

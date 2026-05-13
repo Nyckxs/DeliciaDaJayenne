@@ -87,6 +87,7 @@
   align-items: center;
   gap: 2px;
   flex: 1;
+  margin-left: 160px;
 }
 
 .nav-link {
@@ -216,6 +217,14 @@
 
 .mobile-menu.open {
   display: flex;
+}
+
+.header-center{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+
 }
 
 .mobile-nav-link {

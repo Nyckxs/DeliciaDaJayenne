@@ -6,9 +6,6 @@ import Cart from "../Cart/cart";
 
 const NAV_LINKS = [
   { label: "Home", href: "/" },
-  { label: "Produtos", href: "/produtos" },
-  { label: "Kit festa", href: "/kit-festa" },
-  { label: "Delivery", href: "/delivery" },
   { label: "Contato", href: "/contato" },
   { label: "Quem somos", href: "/quem-somos" },
 ];
@@ -27,7 +24,8 @@ const SearchIcon = () => (
   </svg>
 );
 
-const Header = () => {
+// ↓ Recebe cartItems e setCartItems do App.jsx
+const Header = ({ cartItems, setCartItems }) => {
   const [menuOpen, setMenuOpen] = useState(false);
   const [activePage, setActivePage] = useState("Home");
   const navigate = useNavigate();
@@ -83,8 +81,8 @@ const Header = () => {
           </button>
         </div>
 
-        {/* {carrinho} */}
-        <Cart />
+        {/* ↓ Passa as props para o carrinho funcionar */}
+        <Cart items={cartItems} setItems={setCartItems} />
 
         {/* Hamburger (mobile) */}
         <button

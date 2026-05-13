@@ -45,12 +45,12 @@ const HERO_SLIDES = [
 ];
 
 const PRODUCTS = [
-  { id: 1, name: "Bolo de Chocolate",    price: "R$ 89,90",  badge: "Mais Vendido", emoji: "🍫", category: "Bolos"  },
-  { id: 2, name: "Kit Festa Completo",   price: "R$ 249,90", badge: "Promoção",     emoji: "🎂", category: "Kits"   },
-  { id: 3, name: "Mil Folhas",           price: "R$ 39,90",  badge: "Novidade",     emoji: "🥐", category: "Tortas" },
-  { id: 4, name: "Trufa Sortida (12un)", price: "R$ 49,90",  badge: null,           emoji: "🍬", category: "Doces"  },
-  { id: 5, name: "Cesta Café da Manhã", price: "R$ 129,90", badge: "Top",          emoji: "☕", category: "Cestas" },
-  { id: 6, name: "Bolo Red Velvet",      price: "R$ 99,90",  badge: null,           emoji: "❤️", category: "Bolos"  },
+  { id: 1, name: "Bolo de Chocolate",    price: 89.90,  badge: "Mais Vendido", emoji: "🍫", category: "Bolos"  },
+  { id: 2, name: "Kit Festa Completo",   price: 249.90, badge: "Promoção",     emoji: "🎂", category: "Kits"   },
+  { id: 3, name: "Mil Folhas",           price: 39.90,  badge: "Novidade",     emoji: "🥐", category: "Tortas" },
+  { id: 4, name: "Trufa Sortida (12un)", price: 49.90,  badge: null,           emoji: "🍬", category: "Doces"  },
+  { id: 5, name: "Cesta Café da Manhã",  price: 129.90, badge: "Top",          emoji: "☕", category: "Cestas" },
+  { id: 6, name: "Bolo Red Velvet",      price: 99.90,  badge: null,           emoji: "❤️", category: "Bolos"  },
 ];
 
 const DELIVERY_FEATURES = [
@@ -69,10 +69,9 @@ const ABOUT_FEATURES = [
 
 const CATEGORIES = ["Todos", "Bolos", "Kits", "Tortas", "Doces", "Cestas"];
 
-export default function Home() {
+export default function Home({ onAddToCart }) {
   const [currentSlide, setCurrentSlide]     = useState(0);
   const [isAnimating, setIsAnimating]       = useState(false);
-  const [cartCount, setCartCount]           = useState(0);
   const [activeCategory, setActiveCategory] = useState("Todos");
   const intervalRef = useRef(null);
 
@@ -98,7 +97,7 @@ export default function Home() {
   useEffect(() => {
     startAutoplay();
     return () => clearInterval(intervalRef.current);
-  }, [currentSlide]);          // restart timer when slide changes
+  }, [currentSlide]);
 
   const handleArrow = (dir) => {
     clearInterval(intervalRef.current);
@@ -188,8 +187,10 @@ export default function Home() {
                 <div className="product-cat">{p.category}</div>
                 <div className="product-name">{p.name}</div>
                 <div className="product-bottom">
-                  <span className="product-price">{p.price}</span>
-                  <button className="btn-add" onClick={() => setCartCount((c) => c + 1)}>
+                  <span className="product-price">
+                    R$ {p.price.toFixed(2).replace(".", ",")}
+                  </span>
+                  <button className="btn-add" onClick={() => onAddToCart(p)}>
                     + Adicionar
                   </button>
                 </div>
@@ -241,7 +242,7 @@ export default function Home() {
               ))}
             </div>
 
-            <button className="btn-pedido"><a link to = "./who.jsx">Conheça nossa história →</a></button>
+            <button className="btn-pedido"><a link to="./who.jsx">Conheça nossa história →</a></button>
           </div>
         </div>
       </section>
